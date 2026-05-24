@@ -1,10 +1,6 @@
-FROM gradle:8-jdk21 AS build
+FROM gradle:8-jdk21
 WORKDIR /app
 COPY . .
 RUN gradle build -x test
-
-FROM eclipse-temurin:21-jre
-WORKDIR /app
-COPY --from=build /app/build/libs/*.jar app.jar
 EXPOSE 8080
-ENTRYPOINT ["java", "-jar", "app.jar"]
+CMD ["java", "-jar", "build/libs/wealth-tracker-0.0.1-SNAPSHOT.jar"]
