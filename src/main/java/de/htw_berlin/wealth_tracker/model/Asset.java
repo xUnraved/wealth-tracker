@@ -7,6 +7,12 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 import java.time.LocalDate;
 
+/**
+ * Repräsentiert einen finanziellen Vermögenswert im Wealth Tracker.
+ * Ein Asset kann eine Aktie, ETF, Krypto, Bargeld, Immobilie oder sonstiger Wert sein.
+ * Wird als JPA-Entity in der PostgreSQL-Datenbank gespeichert.
+ */
+
 @Getter
 @Setter
 @AllArgsConstructor
